@@ -1,0 +1,19 @@
+<!--pages/detail/detail.wxml-->
+<view>
+  <!-- 详情图片 -->
+  <view>
+    <image src="{{service.coverpath}}" mode="aspectFit" 
+    style="height: 300rpx;background-color: #CCCCCC;">
+    </image>
+  </view>
+  <!-- 内容 -->
+  <view>
+    <text style="font-weight: 700;">{{service.subject}}</text>
+    <text decode="{{true}}">\n&nbsp;&nbsp;价格：</text>
+    <text style="color: red;">￥{{service.price}}</text>
+    <view style="background-color: silver;height: 2rpx;margin-top: 30rpx;margin-bottom: 30rpx;"></view>
+    <text style="font-weight: 400;">详情描述</text>
+    <text style="font-weight: 100;font-size: small;" user-select="true">\n{{service.message}}</text>
+    <button style="background-color: green;color: white;width: fit-content;" bindtap="book">去预定</button>
+  </view>
+</view>

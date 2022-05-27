@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.WebExperiment.HairdressingAppointmentPlatform.mapper.ServiceTypeMapper">
+
+  <select id="findServiceTypes" resultMap="serviceType">
+  	SELECT ST.id s_id,ST.icon,ST.title s_title,DD.id d_id,DD.`value`,DD.title d_title,DD.type  
+  	FROM service_type ST INNER JOIN data_dict DD ON ST.title=DD.`value` ORDER BY s_id
+  </select>
+  <resultMap type="ServiceType" id="serviceType">
+  	<result property="id" column="s_id"/>
+  	<result property="title" column="s_title"/>
+  	<result property="icon" column="icon"/>
+  	<association property="dataDict" javaType="DataDict">
+  		<result property="id" column="d_id"/>
+  		<result property="title" column="d_title"/>
+  		<result property="value" column="value"/>
+  		<result property="type" column="type"/>
+  	</association>
+  </resultMap>
+</mapper>

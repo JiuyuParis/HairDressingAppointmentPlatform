@@ -1,0 +1,22 @@
+<!--pages/order/order.wxml-->
+<view style="flex-direction: column;">
+  <view style="text-align: center;"><text style="color: red;">点击订单查看详情</text></view>
+  <!-- <button style="font-size: small;font-weight: 300;background-color: #666666;color: white;width: 700rpx;">查看已过期的订单</button> -->
+  <view style="border: 1rpx grey solid;" wx:for="{{serviceOrders}}" wx:key="id">
+    <view bindtap="orderDetail" data-id="{{item.id}}">
+      <text>订单名称：</text>
+      <text style="font-weight: 300;">{{item.service.subject}}</text>
+    </view>
+    <view bindtap="orderDetail" data-id="{{item.id}}">
+      <text>订单金额:￥：</text>
+      <text style="font-weight: 300;">{{item.service.price}}</text>
+    </view>
+    <view style="text-align: end;" bindtap="orderDetail" data-id="{{item.id}}">
+      <text>创建时间:</text>
+      <text style="font-weight: 300;">{{item.date}}</text>
+    </view>
+    <view wx:if="{{item.date>datetime}}" style="margin-bottom: 10rpx;"  bindtap="reback" data-id="{{item.id}}">
+      <button style="background-color: red;color: white;width: fit-content;font-size: 25rpx;">取消订单</button>
+    </view>
+  </view>
+</view>

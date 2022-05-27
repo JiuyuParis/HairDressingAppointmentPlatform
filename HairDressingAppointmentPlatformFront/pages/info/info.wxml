@@ -1,0 +1,52 @@
+<!--pages/info/info.wxml-->
+<view>
+  <view>
+  <!-- 滑动容器 -->
+    <swiper indicator-dots="true" autoplay="true" interval="4000" duration="1000">
+        <block wx:for="{{bannerImgs}}" wx:key="*this">
+          <swiper-item>
+            <image mode="aspectFit" style="height: 400rpx;background-color: #CCCCCC;" src="{{item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <!-- 导航栏 -->
+  <view class="navigation">
+    <!-- 遍历每一个导航标签 -->
+    <block wx:for="{{serviceTypes}}" wx:key="id">
+      <!-- view中的index默认为0 -->
+      <!-- data-自定义属性 -->
+      <view class="navigationItems {{serviceTypeId==item.id?'active_'+navigateionColors[index]:''}}" bindtap="switchTap" data-id="{{item.id}}">
+        <image src="{{item.icon}}" style="height: 80rpx;width: 80rpx;"></image>
+        <text>{{item.dataDict.title}}</text>
+      </view>
+    </block>
+  </view>
+  <!-- 具体美容内容条目 -->
+  <view>
+    <!-- 遍历数据 -->
+    <block wx:for="{{services}}" wx:key="id">
+      <view style="display: flex;">
+        <!--内容图片  -->
+        <view bindtap="detail" data-id="{{item.id}}">
+          <image style="width: 300rpx;height: 300rpx;" mode="aspectFit" src="{{item.coverpath}}"></image>
+        </view>
+        <!-- 文字内容 -->
+        <view style="width: 350rpx;font-size: 28rpx;" bindtap="detail" data-id="{{item.id}}">
+        <!-- 主题 -->
+          <view>
+            <text>{{item.subject}}</text>
+          </view>
+          <!-- 价格 -->
+          <view>
+            价格：<text style="color: red;">￥{{item.price}}</text>
+          </view>
+        </view>
+        <!-- 预定按钮 -->
+        <view class="itemBookBtn" bindtap="bookTap" data-id="{{item.id}}">
+          <text>预定</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

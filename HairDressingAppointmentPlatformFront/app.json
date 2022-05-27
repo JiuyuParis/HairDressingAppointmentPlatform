@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/info/info",
+    "pages/mine/mine",
+    "pages/book/book",
+    "pages/detail/detail",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/personal/personal",
+    "pages/order/order",
+    "pages/orderDetail/orderDetail",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#FF0066",
+    "navigationBarTitleText": "玖漾语阁美容预约平台",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/info/info",
+      "text": "信息",
+      "iconPath": "/images/信息.png",
+      "selectedIconPath": "/images/信息-选中.png"
+    },{
+      "pagePath": "pages/order/order",
+      "text":"订单",
+      "iconPath": "images/订单.png",
+      "selectedIconPath": "images/订单-选中.png"
+    },{
+      "pagePath": "pages/mine/mine",
+      "text":"我的",
+      "iconPath": "images/我的.png",
+      "selectedIconPath": "images/我的-选中.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

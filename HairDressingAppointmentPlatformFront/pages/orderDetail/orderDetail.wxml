@@ -1,0 +1,36 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view style="flex-direction: column;">
+  <!-- <button style="font-size: small;font-weight: 300;background-color: #666666;color: white;width: 700rpx;">查看已过期的订单</button> -->
+  <image src="{{serviceOrder.service.coverpath}}" mode="aspectFit" style="height: 450rpx;"></image>
+  <view>
+    <text>服务名称：</text>
+    <text style="font-weight: 300;">{{serviceOrder.service.subject}}</text>
+  </view>
+  <view>
+    <text>订单编号：</text>
+    <text style="font-weight: 300;">{{serviceOrder.id}}</text>
+  </view>
+  <view>
+    <text>预留电话：</text>
+    <text style="font-weight: 300;">{{serviceOrder.phone}}</text>
+  </view>
+  <view>
+    <text>地址：</text>
+    <text style="font-weight: 300;">{{serviceOrder.address}}</text>
+  </view>
+  <view>
+    <text>创建日期：</text>
+    <text style="font-weight: 300;">{{serviceOrder.date}}</text>
+  </view>
+  <view style="text-align: end;padding-right: 40rpx;">
+    <text>￥：</text>
+    <text style="font-weight: 300;color: red;">{{serviceOrder.service.price}}</text>
+  </view>
+  <view>
+    <text>备注：</text>
+    <text style="font-weight: 300;">{{serviceOrder.message}}</text>
+  </view>
+  <view wx:if="{{serviceOrder.date>datetime}}">
+    <button style="background-color: red;color: white;" bindtap="reback" data-id="{{serviceOrder.id}}">取消订单</button>
+  </view>
+</view>

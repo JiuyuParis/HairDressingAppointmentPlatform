@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.WebExperiment.HairdressingAppointmentPlatform.mapper.OrderMapper">
+	<select id="findServiceOrders" resultMap="serviceOrder">
+		SELECT so.id so_id,so.service_id,so.user_id,so.phone,so.address,so.date,so.message so_message,
+		s.id s_id,s.coverpath,s.price,s.message s_message,s.service_type,s.`subject` 
+		FROM service_order so INNER JOIN service s ON so.service_id=s.id where so.user_id=#{id}
+	</select>
+	<select id="findServiceOrderById" resultMap="serviceOrder">
+		SELECT so.id so_id,so.service_id,so.user_id,so.phone,so.address,so.date,so.message so_message,
+		s.id s_id,s.coverpath,s.price,s.message s_message,s.service_type,s.`subject` 
+		FROM service_order so INNER JOIN service s ON so.service_id=s.id where so.id=#{serviceOrderId}
+	</select>
+	<resultMap type="ServiceOrder" id="serviceOrder">
+	  	<result property="id" column="so_id"/>
+	  	<result property="serviceId" column="service_id"/>
+	  	<result property="userId" column="user_id"/>
+	  	<result property="phone" column="phone"/>
+		<result property="address" column="address"/>
+	  	<result property="date" column="date"/>
+	  	<result property="message" column="so_message"/>
+	  	<association property="service" javaType="Service">
+	  		<result property="id" column="s_id"/>
+	  		<result property="coverpath" column="coverpath"/>
+	  		<result property="price" column="price"/>
+	  		<result property="message" column="s_message"/>
+	  		<result property="serviceType" column="service_type"/>
+	  		<result property="subject" column="subject"/>
+	  	</association>
+  </resultMap>
+</mapper>

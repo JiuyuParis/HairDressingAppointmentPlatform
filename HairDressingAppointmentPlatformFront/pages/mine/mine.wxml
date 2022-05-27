@@ -1,0 +1,31 @@
+<!--pages/mine/mine.wxml-->
+<view style="flex-direction: column;">
+    <view wx:if="{{isLogin}}">
+        <!-- 信息展示部分 -->
+        <view style="display: flex;border: 1px grey solid;">
+            <image src="/images/女生头像.png" mode="aspectFit" style="height: 200rpx;width: 200rpx;"></image>
+            <view>
+                <view style="font-size: 50rpx;color: #339900;">{{user.username}}</view>
+                <view style="color: #ff9900;">{{user.phone}}</view>
+            </view>
+            <navigator url="/pages/personal/personal">
+                <view style="padding-top: 40rpx;color: blue;font-size: small;margin-left: 250rpx;">修改资料>></view>
+            </navigator>
+        </view>
+        <view style="display: flex;">
+            <image src="/images/钱包.png" style="height: 50rpx;width: 50rpx;margin-top: 30rpx;"></image>
+            <text style="font-weight: 300;padding-left: 20rpx;margin-top: 30rpx;">钱包</text>
+            <text style="margin-top: 30rpx">￥ {{user.money}}</text>
+            <button style="width: fit-content;margin-top: 10rpx;background-color: #ff00cc;color: white;">充值</button>
+        </view>
+    </view>
+    <navigator wx:else url="/pages/login/login"> 
+        <view  style="display: flex;border: 1px grey solid;">
+            <button style="font-size: 80rpx;color:grey;background-color: green;">请登录</button>
+        </view>
+        <view style="text-align: center;">
+            <text style="font-weight: 300;">登陆后才能展示信息哦</text>
+            <image src="/images/笑脸.png" mode="aspectFit" style="width: 400rpx;"></image>
+        </view>
+    </navigator>
+</view>

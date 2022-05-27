@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+<!-- 插值表达式 -->
+<view class="title">
+  {{msg}}
+</view>
+<!-- 循环遍历 -->
+<view>
+  <ul>
+    <li wx:key="id" wx:for="{{persons}}" wx:for-item="person">
+      {{person}}
+    </li>
+  </ul>
+</view>
+<!-- 对象数据的使用 -->
+<view>
+  {{student.name}}---{{student.age}}---{{student.class}}
+</view>
+<view>
+  <text>这是文本</text>
+</view>
+<view>
+  <!-- bindtap相当于onclik -->
+  <button bindtap="show" class="btn">显示图片</button>
+  <image src="/images/台北.jpg" wx:if="{{isShowImage}}"></image>
+</view>
+</view>

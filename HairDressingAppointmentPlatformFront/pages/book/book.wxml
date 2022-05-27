@@ -1,0 +1,47 @@
+<!--pages/book/book.wxml-->
+<view>
+  <!-- 图片 -->
+  <view>
+    <image src="{{service.coverpath}}" mode="aspectFit" 
+    style="height: 300rpx;background-color: #CCCCCC;">
+    </image>
+  </view>
+  <view>
+    <!-- bindinput输入框绑定事件，输入框改变时回调用此方法 -->
+   <input type="text" value="{{service.subject}}" bindinput="getSubject"/>
+  </view>
+  <view style="display: flex;font-size: small;font-weight: 300;">
+    <text>预留电话：</text>
+    <input style="border: grey 1rpx solid;" type="text" bindinput="getTel" value="{{user.phone}}"/>
+  </view>
+  <!-- 显示地址、日期、时间组件 -->
+  <view>
+    <!-- 地址组件 -->
+    <view>
+        <text style="font-weight: 300;font-size: small;">您的地址</text>
+        <input style="border: grey 1rpx solid;" type="text" bindinput="getAddress" value="{{user.address1}}"/>
+    </view>
+    <!-- 日期、时间组件 -->
+    <view style="margin-top: 20rpx;display: flex;">
+      <!-- 日期组件 -->
+      <picker start="2021-11-25" end="2031-11-25" mode="date" bindchange="changeDate" value="{{date}}">
+        <image src="/images/index_icon.png" mode="aspectFit" style="width: 50rpx;height: 50rpx;"></image>
+        <text style="font-weight: 300;font-size: small;margin-left: 25rpx;">{{date}}</text>
+      </picker>
+      <!-- 时间组件 -->
+      <picker start="1:00" end="24:00" mode="time" bindchange="changeTime" value="{{time}}" style="margin-left: 100rpx;">
+        <image src="/images/time.png" mode="aspectFit" style="width: 50rpx;height: 50rpx;"></image>
+        <text style="font-weight: 300;font-size: small;margin-left: 25rpx;">{{time}}</text>
+      </picker>
+    </view>
+  </view>
+  <!-- 预定备注 -->
+  <view>
+      <text>备注信息</text>
+      <textarea placeholder="说点什么" style="border: 2px grey solid;" bindinput="getMessage"></textarea>
+  </view>
+  <!-- 预定按钮 -->
+  <view style="margin-top: 20rpx;">
+    <button bindtap="submitReserve" style="color: white;background-color: green;width: fit-content;">立即预定</button>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<!--pages/login/login.wxml-->
+<view style="flex-direction: column;">
+  <view style="text-align: center;">
+    <text style="font-size: 120rpx;color: #ff3366;">玖漾语阁</text>
+    <text style="color: #999999;">美容预约平台</text>
+    <text style="color: #ff9900;">\n让生活更美丽</text>
+    <text>\n欢迎登陆</text>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view>
+    <view style="font-weight: 300;">手机号</view>
+    <input name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getPhone" bindblur="chekInput"/>
+    <view style="font-weight: 300;">密码</view>
+    <input password="true" name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getPassword" bindblur="chekInput"/>
+  </view>
+    <view style="display: flex;">
+      <button bindtap="login" style="background-color: green;color: white;width: fit-content;margin-bottom: 10rpx;">登陆</button>
+      <button formType="reset" style="width: fit-content;background-color: grey;color: white;">重置</button>
+    </view>
+    <view style="text-align: center;">
+      <navigator url="/pages/register/register" style="color: #3333ff;">还没有账号？去注册>>></navigator>
+    </view>
+    <view>
+      <text style="color: red;font-size: small;font-weight: 300;">{{tip}}</text>
+    </view>
+  </form>
+</view>

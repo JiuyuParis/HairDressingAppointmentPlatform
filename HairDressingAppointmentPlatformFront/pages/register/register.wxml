@@ -1,0 +1,33 @@
+<!--pages/register/register.wxml-->
+<view style="flex-direction: column;">
+  <view style="text-align: center;">
+    <text style="font-size: 120rpx;color: #ff3366;">玖漾语阁</text>
+    <text style="color: #999999;">美容预约平台</text>
+    <text style="color: #ff9900;">\n让生活更美丽</text>
+    <text>\n欢迎注册</text>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view>
+    <view style="font-weight: 300;">用户名（必填）</view>
+    <input name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getUserName" bindblur="chekInput"/>
+    <view style="font-weight: 300;">手机号（必填，作为登陆账号）</view>
+    <input name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getPhone" bindblur="chekInput"/>
+    <view style="font-weight: 300;">密码(必填)</view>
+    <input password="true" name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getPassword" bindblur="chekInput"/>
+    <view style="font-weight: 300;">身高（选填）</view>
+    <input name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getHeight"/>
+    <view style="font-weight: 300;">体重（选填）</view>
+    <input name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getWeight"/>
+    <view style="font-weight: 300;">地址（选填）</view>
+    <input name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getAddress1"/>
+  </view>
+    <view style="display: flex;">
+      <button bindtap="register" style="background-color: green;color: white;width: fit-content;margin-bottom: 10rpx;">注册</button>
+      <button formType="reset" style="width: fit-content;background-color: grey;color: white;">重置</button>
+      <navigator url="/pages/login/login" style="font-size: small;color: blue;">去登陆</navigator>
+    </view>
+    <view>
+      <text style="color: red;font-size: small;font-weight: 300;">{{tip}}</text>
+    </view>
+  </form>
+</view>

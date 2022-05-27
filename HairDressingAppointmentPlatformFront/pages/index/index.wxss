@@ -1,0 +1,9 @@
+/**index.wxss**/
+.title{
+  color: green;
+  text-shadow: grey 2px 3px;
+  font-size: 80rpx;
+}
+.btn{
+  background-color: purple;
+}

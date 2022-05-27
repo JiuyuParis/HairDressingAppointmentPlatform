@@ -1,0 +1,43 @@
+/* pages/info/info.wxss */
+/* 设置导航样式 */
+.navigation{
+  display: flex;/*灵活伸缩页面展示(粗略的理解为其子视图将挨个补到后面) */
+  justify-content: space-around;/*沿着伸缩容器的当前行主轴对齐伸缩项。*/
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+/* 调整导航中的每个视图 */
+.navigation .navigationItems{
+  font-size: 28rpx;
+  width: 90rpx;/*每个视图的宽度，不限制一下高度文本无法换行显示*/
+  text-align: center;
+}
+/* 设置每个导航栏选中时的颜色 */
+.navigation .active_red{
+  color: red;
+}
+.navigation .active_orange{
+  color: orange;
+}
+.navigation .active_yellow{
+  color: yellow;
+}
+.navigation .active_green{
+  color: green;
+}
+.navigation .active_purple{
+  color: purple;
+}
+/* 预定按钮样式 */
+.itemBookBtn{
+  width: 80rpx;
+  height: 80rpx;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 27rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: relative;
+  top: 50rpx;
+}

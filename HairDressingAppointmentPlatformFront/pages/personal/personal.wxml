@@ -1,0 +1,27 @@
+<!--pages/personal/personal.wxml-->
+<view style="flex-direction: column;">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view>
+    <view style="font-weight: 300;">用户名（必填）</view>
+    <input value="{{user.username}}" name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getUserName" bindblur="chekInput"/>
+    <view style="font-weight: 300;">手机号（必填，作为登陆账号）</view>
+    <input value="{{user.phone}}" name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getPhone" bindblur="chekInput"/>
+    <view style="font-weight: 300;">密码(必填)</view>
+    <input  value="{{user.password}}" password="true" name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getPassword" bindblur="chekInput"/>
+    <view style="font-weight: 300;">身高（选填）</view>
+    <input value="{{user.height}}" name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getHeight"/>
+    <view style="font-weight: 300;">体重（选填）</view>
+    <input value="{{user.weight}}" name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getWeight"/>
+    <view style="font-weight: 300;">地址1（选填）</view>
+    <input  value="{{user.address1}}" name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getAddress1"/>
+    <view style="font-weight: 300;">地址2（选填）</view>
+    <input value="{{user.address2}}"  value="{{user.address1}}" name="input" style="border: 1rpx grey solid;margin: 10rpx;" bindinput="getAddress1"/>
+  </view>
+    <view style="display: flex;">
+      <button bindtap="modifyUser" style="background-color: green;color: white;width: fit-content;margin-bottom: 10rpx;">保存修改</button>
+    </view>
+    <view>
+      <text style="color: red;font-size: small;font-weight: 300;">{{tip}}</text>
+    </view>
+  </form>
+</view>
